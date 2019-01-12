@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{B60E2019-F3A1-48B0-8BCA-80DE0E69AAF3}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>IGESReader</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v140</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <DebugInformationFormat>OldStyle</DebugInformationFormat>
+      <StringPooling>true</StringPooling>
+      <AdditionalIncludeDirectories>D:\VTK\VTK-7.1.1-bin\Common\Core;D:\VTK\VTK-7.1.1\Common\Core;D:\VTK\VTK-7.1.1-bin\Utilities\KWIML;D:\VTK\VTK-7.1.1\Utilities\KWIML;D:\VTK\VTK-7.1.1-bin\Utilities\KWSys;D:\VTK\VTK-7.1.1\Utilities\KWSys;D:\VTK\VTK-7.1.1-bin\IO\Legacy;D:\VTK\VTK-7.1.1\IO\Legacy;D:\VTK\VTK-7.1.1-bin\Common\DataModel;D:\VTK\VTK-7.1.1\Common\DataModel;D:\VTK\VTK-7.1.1-bin\Common\Math;D:\VTK\VTK-7.1.1\Common\Math;D:\VTK\VTK-7.1.1-bin\Common\Misc;D:\VTK\VTK-7.1.1\Common\Misc;D:\VTK\VTK-7.1.1-bin\Common\System;D:\VTK\VTK-7.1.1\Common\System;D:\VTK\VTK-7.1.1-bin\Common\Transforms;D:\VTK\VTK-7.1.1\Common\Transforms;D:\VTK\VTK-7.1.1-bin\Common\ExecutionModel;D:\VTK\VTK-7.1.1\Common\ExecutionModel;D:\VTK\VTK-7.1.1-bin\IO\Core;D:\VTK\VTK-7.1.1\IO\Core;D:\VTK\VTK-7.1.1-bin\ThirdParty\zlib;D:\VTK\VTK-7.1.1\ThirdParty\zlib;D:\VTK\VTK-7.1.1-bin\IO\XML;D:\VTK\VTK-7.1.1\IO\XML;D:\VTK\VTK-7.1.1-bin\IO\XMLParser;D:\VTK\VTK-7.1.1\IO\XMLParser;D:\VTK\VTK-7.1.1-bin\ThirdParty\expat;D:\VTK\VTK-7.1.1\ThirdParty\expat;D:\VTK\VTK-7.1.1-bin\IO\Geometry;D:\VTK\VTK-7.1.1\IO\Geometry;D:\VTK\VTK-7.1.1-bin\Testing\Rendering;D:\VTK\VTK-7.1.1\Testing\Rendering;D:\VTK\VTK-7.1.1-bin\IO\Image;D:\VTK\VTK-7.1.1\IO\Image;D:\VTK\VTK-7.1.1-bin\Utilities\DICOMParser;D:\VTK\VTK-7.1.1\Utilities\DICOMParser;D:\VTK\VTK-7.1.1-bin\Utilities\MetaIO\vtkmetaio;D:\VTK\VTK-7.1.1-bin\Utilities\MetaIO;D:\VTK\VTK-7.1.1\Utilities\MetaIO;D:\VTK\VTK-7.1.1-bin\ThirdParty\jpeg;D:\VTK\VTK-7.1.1\ThirdParty\jpeg;D:\VTK\VTK-7.1.1-bin\ThirdParty\png;D:\VTK\VTK-7.1.1\ThirdParty\png;D:\VTK\VTK-7.1.1-bin\ThirdParty\tiff\vtktiff\libtiff;D:\VTK\VTK-7.1.1-bin\ThirdParty\tiff;D:\VTK\VTK-7.1.1\ThirdParty\tiff;D:\VTK\VTK-7.1.1-bin\Imaging\Core;D:\VTK\VTK-7.1.1\Imaging\Core;D:\VTK\VTK-7.1.1-bin\Rendering\Core;D:\VTK\VTK-7.1.1\Rendering\Core;D:\VTK\VTK-7.1.1-bin\Common\Color;D:\VTK\VTK-7.1.1\Common\Color;D:\VTK\VTK-7.1.1-bin\Common\ComputationalGeometry;D:\VTK\VTK-7.1.1\Common\ComputationalGeometry;D:\VTK\VTK-7.1.1-bin\Filters\Core;D:\VTK\VTK-7.1.1\Filters\Core;D:\VTK\VTK-7.1.1-bin\Filters\General;D:\VTK\VTK-7.1.1\Filters\General;D:\VTK\VTK-7.1.1-bin\Filters\Geometry;D:\VTK\VTK-7.1.1\Filters\Geometry;D:\VTK\VTK-7.1.1-bin\Filters\Sources;D:\VTK\VTK-7.1.1\Filters\Sources;D:\VTK\VTK-7.1.1-bin\Testing\Core;D:\VTK\VTK-7.1.1\Testing\Core;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>D:\VTK\VTK-7.1.1-bin\lib\Debug\vtkIOXML-7.1.lib;D:\VTK\VTK-7.1.1-bin\lib\Debug\vtkIOXMLParser-7.1.lib;D:\VTK\VTK-7.1.1-bin\lib\Debug\vtkexpat-7.1.lib;D:\VTK\VTK-7.1.1-bin\lib\Debug\vtkIOGeometry-7.1.lib;D:\VTK\VTK-7.1.1-bin\lib\Debug\vtkTestingRendering-7.1.lib;D:\VTK\VTK-7.1.1-bin\lib\Debug\vtkIOImage-7.1.lib;D:\VTK\VTK-7.1.1-bin\lib\Debug\vtkDICOMParser-7.1.lib;D:\VTK\VTK-7.1.1-bin\lib\Debug\vtkmetaio-7.1.lib;D:\VTK\VTK-7.1.1-bin\lib\Debug\vtkpng-7.1.lib;D:\VTK\VTK-7.1.1-bin\lib\Debug\vtktiff-7.1.lib;D:\VTK\VTK-7.1.1-bin\lib\Debug\vtkImagingCore-7.1.lib;D:\VTK\VTK-7.1.1-bin\lib\Debug\vtkRenderingCore-7.1.lib;D:\VTK\VTK-7.1.1-bin\lib\Debug\vtkCommonColor-7.1.lib;D:\VTK\VTK-7.1.1-bin\lib\Debug\vtkFiltersGeometry-7.1.lib;D:\VTK\VTK-7.1.1-bin\lib\Debug\vtkFiltersSources-7.1.lib;D:\VTK\VTK-7.1.1-bin\lib\Debug\vtkIOLegacy-7.1.lib;D:\VTK\VTK-7.1.1-bin\lib\Debug\vtkIOCore-7.1.lib;comctl32.lib;wsock32.lib;D:\VTK\VTK-7.1.1-bin\lib\Debug\vtkzlib-7.1.lib;D:\VTK\VTK-7.1.1-bin\lib\Debug\vtkjpeg-7.1.lib;D:\VTK\VTK-7.1.1-bin\lib\Debug\vtkFiltersGeneral-7.1.lib;D:\VTK\VTK-7.1.1-bin\lib\Debug\vtkCommonComputationalGeometry-7.1.lib;D:\VTK\VTK-7.1.1-bin\lib\Debug\vtkFiltersCore-7.1.lib;D:\VTK\VTK-7.1.1-bin\lib\Debug\vtkCommonExecutionModel-7.1.lib;D:\VTK\VTK-7.1.1-bin\lib\Debug\vtkCommonDataModel-7.1.lib;D:\VTK\VTK-7.1.1-bin\lib\Debug\vtkCommonTransforms-7.1.lib;D:\VTK\VTK-7.1.1-bin\lib\Debug\vtkCommonMisc-7.1.lib;D:\VTK\VTK-7.1.1-bin\lib\Debug\vtkCommonMath-7.1.lib;D:\VTK\VTK-7.1.1-bin\lib\Debug\vtkCommonSystem-7.1.lib;D:\VTK\VTK-7.1.1-bin\lib\Debug\vtkCommonCore-7.1.lib;D:\VTK\VTK-7.1.1-bin\lib\Debug\vtksys-7.1.lib;ws2_32.lib;Psapi.lib;kernel32.lib;user32.lib;gdi32.lib;winspool.lib;shell32.lib;ole32.lib;oleaut32.lib;uuid.lib;comdlg32.lib;advapi32.lib;%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>Use</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="EntityParam.h" />
+    <ClInclude Include="IGESFileParser.h" />
+    <ClInclude Include="NURBSParam.h" />
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="targetver.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="EntityDrawing.cpp" />
+    <ClCompile Include="EntityParam.cpp" />
+    <ClCompile Include="EntityProperty.cpp" />
+    <ClCompile Include="EntityRationalBSplineSurf.cpp" />
+    <ClCompile Include="EntityTransformMat.cpp" />
+    <ClCompile Include="EntityView.cpp" />
+    <ClCompile Include="IGESFileParser.cpp" />
+    <ClCompile Include="IGESReader.cpp" />
+    <ClCompile Include="NURBSParam.cpp" />
+    <ClCompile Include="pvIGESReader.cpp" />
+    <ClCompile Include="stdafx.cpp">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

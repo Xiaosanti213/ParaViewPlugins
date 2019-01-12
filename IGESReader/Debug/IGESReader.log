@@ -1,0 +1,26 @@
+﻿cl : 命令行 warning D9007: “/Gm”需要“/Zi 或 /ZI”；选项被忽略
+  EntityRationalBSplineSurf.cpp
+EntityRationalBSplineSurf.cpp(20): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+EntityRationalBSplineSurf.cpp(21): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+EntityRationalBSplineSurf.cpp(22): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+EntityRationalBSplineSurf.cpp(23): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+EntityRationalBSplineSurf.cpp(24): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+EntityRationalBSplineSurf.cpp(25): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+EntityRationalBSplineSurf.cpp(26): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+EntityRationalBSplineSurf.cpp(91): warning C4018: “<”: 有符号/无符号不匹配
+  NURBSParam.cpp
+NURBSParam.cpp(36): warning C4018: “<”: 有符号/无符号不匹配
+NURBSParam.cpp(64): warning C4018: “<”: 有符号/无符号不匹配
+NURBSParam.cpp(65): warning C4018: “<”: 有符号/无符号不匹配
+NURBSParam.cpp(76): warning C4018: “<”: 有符号/无符号不匹配
+NURBSParam.cpp(104): warning C4018: “<”: 有符号/无符号不匹配
+NURBSParam.cpp(146): warning C4018: “<”: 有符号/无符号不匹配
+NURBSParam.cpp(181): warning C4018: “<”: 有符号/无符号不匹配
+NURBSParam.cpp(209): warning C4018: “<”: 有符号/无符号不匹配
+NURBSParam.cpp(241): warning C4018: “<”: 有符号/无符号不匹配
+NURBSParam.cpp(245): warning C4018: “<”: 有符号/无符号不匹配
+NURBSParam.cpp(246): warning C4018: “<”: 有符号/无符号不匹配
+NURBSParam.cpp(312): warning C4018: “<”: 有符号/无符号不匹配
+  正在生成代码...
+  IGESReader.vcxproj -> C:\Users\lenovo\Desktop\doc\1224\IGESReader\Debug\IGESReader.exe
+  IGESReader.vcxproj -> C:\Users\lenovo\Desktop\doc\1224\IGESReader\Debug\IGESReader.pdb (Full PDB)
