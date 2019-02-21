@@ -68,5 +68,17 @@
     <ClCompile Include="pvIGESReader.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="EntityBSplineCurve.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityCurveOnParamSurf.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityClipParamSurf.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="EntityCompositeCurve.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>

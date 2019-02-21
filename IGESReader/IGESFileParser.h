@@ -35,7 +35,7 @@ private:
 	const short lineInfoCount = 72;
 	std::string infoByteStorage;					// IGES文件字符ASCII码数组
 
-	std::array<std::string, 25> GStringStorage;		// 定长使用array比vector效率高
+	std::array<std::string, 26> GStringStorage;		// 定长使用array比vector效率高
 	std::map<short, float> GNumStorage;				// 存储GStringStorage索引对应的浮点数
 
 	struct DInfoStorageType {
@@ -45,8 +45,13 @@ private:
 		int colorNumOrPtr;							// 颜色号
 		int formNum;
 	};
+
+	int paramStartLineIndFindPClassInd(int);     // 通过参数段指针找到对应实体
+
 	std::vector<DInfoStorageType> DInfoStorage;
 
 	std::vector< EntityParam* > PInfoStorageClass;	// 多态存储实体子类信息 但是不能用引用
+
+	int uvwLength[3];								// 曲面参数域上点的长度
 };
 

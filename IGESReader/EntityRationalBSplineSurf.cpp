@@ -3,8 +3,8 @@
 #include <vector>
 
 
-EntityBSplineSurf::EntityBSplineSurf(EntityTransformMat* entTM):
-	EntityParam(128, "B - NURBS SRF")
+EntityBSplineSurf::EntityBSplineSurf(EntityTransformMat* entTM, int u, int v):
+	EntityParam(128, "B - NURBS SRF"),numU(u),numV(v)
 {
 	memcpy(R, entTM->getR(), sizeof(R));
 	memcpy(Tr, entTM->getT(), sizeof(Tr));
@@ -65,7 +65,7 @@ void EntityBSplineSurf::parseIGESStringInfo(std::vector<double> entityInfoValSto
 
 	// 计算点坐标
 	NURBSSurf.getTransposeCoefsMat();
-	NURBSSurf.getEvaluatePoints({ 199, 199 });
+	NURBSSurf.getEvaluatePoints({ numU - 1, numV - 1 });
 
 }
 
@@ -98,6 +98,60 @@ void EntityBSplineSurf::calTransRotCoefs(void)
 	}
 	return;
 }
+
+
+
+unsigned int* EntityBSplineSurf::getTriangleIndex(void)
+{
+	// 三角组合
+	int intu = numU-1;//参数域u区间个数
+	int intv = numV-1;
+	int mtri = 2 * intu * intv;
+	int dims[2];
+	dims[0] = mtri;
+	dims[1] = 3;
+	unsigned int* ptri;
+
+	ptri = new unsigned int[3 * mtri];
+	int myint, myint2, myint3;
+
+	for (int j = 0; j < intv; j++) {
+		myint = j * intu;	//前j行参数区间的网格数
+		myint2 = j * numU;	//前j行参数区间的节点数
+		for (int i = 0; i < intu; i++) {
+			myint3 = 2 * (myint + i);
+
+			ptri[myint3] = myint2 + numU + i + 1;
+			ptri[myint3 + 1] = myint2 + i + 2;
+
+			ptri[myint3 + mtri] = myint2 + i + 2;
+			ptri[myint3 + 1 + mtri] = myint2 + numU + i + 1;
+
+			ptri[myint3 + 2 * mtri] = myint2 + i + 1;
+			ptri[myint3 + 1 + 2 * mtri] = myint2 + numU + i + 2;
+		}
+	}
+
+	// 注意组合的格式
+	for (int i = 0; i < 10; i++)
+	{
+		printf("[ %d, %d, %d ]\n", ptri[i],
+			ptri[i + mtri], ptri[i + 2 * mtri]);
+	}
+
+	return ptri;
+}
+
+
+
+void EntityBSplineSurf::setnumUnumV(int u, int v)
+{
+	numU = u;
+	numV = v;
+}
+
+
+
 
 
 

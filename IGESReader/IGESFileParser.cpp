@@ -16,7 +16,7 @@ IGESFileParser::IGESFileParser(std::string filename):
 		std::cerr << "Error open file" << filename << std::endl;// 无法打开文件
 		exit(EXIT_FAILURE);
 	}
-
+	
 }
 
 IGESFileParser::~IGESFileParser()
@@ -77,10 +77,11 @@ void IGESFileParser::GInfoSegProcess()
 			if (infoByteStorage[j] != ',' && j < GLastLineInd * lineCharCount + lineInfoCount - 1
 					&& infoByteStorage[j] != ';')
 				GInfoString.push_back(infoByteStorage[j]);
-			else {
+			else if(infoByteStorage[j] != ';'){
 				GStringStorage[k++] = GInfoString;
 				GInfoString.clear();
 			}
+			else;//;表示G段结束
 		}
 
 	// G段信息两部分分别整合
@@ -234,11 +235,19 @@ void IGESFileParser::PInfoSegProcess()
 		entityType = DInfoStorage[i].entityTypeNum;
 		switch (entityType)									
 		{
+			case 102:
+				PInfoStorageClass.push_back(new EntityCompositeCurve()); break;
 			case 124:
 				PInfoStorageClass.push_back(new EntityTransformMat()); break;
+			case 126:
+				PInfoStorageClass.push_back(new EntityBSplineCurve()); break;
 			case 128:
 				entityTransMatPtr = dynamic_cast<EntityTransformMat*>(*(PInfoStorageClass.end()-1));
-				PInfoStorageClass.push_back(new EntityBSplineSurf(entityTransMatPtr)); break;
+				PInfoStorageClass.push_back(new EntityBSplineSurf(entityTransMatPtr, 200, 200)); break;
+			case 142:
+				PInfoStorageClass.push_back(new EntityCurveOnParamSurf()); break;
+			case 144:
+				PInfoStorageClass.push_back(new EntityClipParamSurf()); break;
 			case 404:
 				PInfoStorageClass.push_back(new EntityDrawing()); break;
 			case 406:
@@ -262,6 +271,15 @@ EntityParam* IGESFileParser::getEachEntityClass(int num)
 		return PInfoStorageClass[num];
 	else
 		std::cerr << "index out of range of Number of Entity\n";
+}
+
+
+
+int IGESFileParser::paramStartLineIndFindPClassInd(int indToFind)
+{
+	for (int ind = 0; ind < DInfoStorage.size(); ind++)
+		if (DInfoStorage[ind].paramStartLineInd == indToFind) return ind;
+	return -1;
 }
 
 

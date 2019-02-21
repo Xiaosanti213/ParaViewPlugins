@@ -37,9 +37,9 @@ int main(int argc, char** argv)
 	vtkSmartPointer<pvIGESReader> IGESFileReaderInstance =
 		vtkSmartPointer<pvIGESReader>::New();
 
-	IGESFileReaderInstance->SetFileName("C:/Users/lenovo/Desktop/doc/1224/IGESReader/IGESReader/example2.igs");
+	IGESFileReaderInstance->SetFileName("C:\\Users\\lenovo\\Desktop\\doc\\model\\UAV\\UAV_asm.igs");
 
-	IGESFileReaderInstance->DebugOn();
+	//IGESFileReaderInstance->DebugOn();
 	IGESFileReaderInstance->Update();
 
 	vtkSmartPointer<vtkPolyData> NURBSPolyData =
@@ -48,7 +48,7 @@ int main(int argc, char** argv)
 
 	// ²Î¿¼ Pg53
 	vtkSmartPointer<vtkPolyDataWriter> writer = vtkSmartPointer<vtkPolyDataWriter>::New();
-	writer->SetFileName("testPolyDataFile.vtk");
+	writer->SetFileName("UAVPolyDataFile.vtk");
 	writer->SetInputData(NURBSPolyData);
 	writer->Write();
 

@@ -6,6 +6,7 @@
 #include "vtkSmartPointer.h"
 #include "vtkPoints.h"
 #include "vtkCellArray.h"
+#include "vtkTriangle.h"
 #include "vtkDemandDrivenPipeline.h"
 #include "vtkStreamingDemandDrivenPipeline.h"
 
@@ -110,13 +111,19 @@ int pvIGESReader::RequestData(vtkInformation* vtkNotUsed(request),
 
 	// 创建PolyData数据
 	vtkSmartPointer<vtkPoints> points = vtkSmartPointer<vtkPoints>::New();
-	vtkSmartPointer<vtkCellArray> vertices = vtkSmartPointer<vtkCellArray>::New();
+	//vtkSmartPointer<vtkCellArray> vertices = vtkSmartPointer<vtkCellArray>::New();
+	vtkSmartPointer<vtkCellArray> triangles = vtkSmartPointer<vtkCellArray>::New();
+	vtkSmartPointer<vtkTriangle> triangle = vtkSmartPointer<vtkTriangle>::New();
 	vtkIdType pid[1];//Point Id
 
 	// 将NURBS曲面数据提取整合
 	EntityBSplineSurf* BSplineSurfPtr;
 	std::vector<std::vector<double>> NURBSEntityEvalPnts;
+	unsigned int* NURBSEntityTriangleInd;
+	int numParamField[2];
+	int numTriGrid;
 	double finalPnts[3];
+	static int transInd = 0;
 
 	for (int i = 0; i < varIGESFileParser.getNumOfEntity(); i++)
 	{
@@ -125,17 +132,33 @@ int pvIGESReader::RequestData(vtkInformation* vtkNotUsed(request),
 		case 128://NURBS曲面
 			if (BSplineSurfPtr = dynamic_cast<EntityBSplineSurf*>(varIGESFileParser.getEachEntityClass(i)))
 			{
+				BSplineSurfPtr->getnumUnumV(numParamField);
+				numTriGrid = 2 * (numParamField[0]-1) * (numParamField[1] - 1);
 				NURBSEntityEvalPnts = *(BSplineSurfPtr->getNURBSSurf()->getFinalEvalPnts());//const用法
+				NURBSEntityTriangleInd = new unsigned int[3* numTriGrid];
+				memcpy(NURBSEntityTriangleInd, BSplineSurfPtr->getTriangleIndex(), 
+								numTriGrid * sizeof(unsigned int) * 3);
 				for (int j = 0; j < NURBSEntityEvalPnts.size(); j++)
 				{
 					pid[0] = points->InsertNextPoint(//权重都1
 									NURBSEntityEvalPnts[j][0],
 									NURBSEntityEvalPnts[j][1],
 									NURBSEntityEvalPnts[j][2]);
-					vertices->InsertNextCell(1, pid);
+					//vertices->InsertNextCell(1, pid);
+				}
+
+				for (int k = 0; k < numTriGrid; k++)
+				{
+					triangle->GetPointIds()->SetId(0, NURBSEntityTriangleInd[k] - 1 + transInd);
+					triangle->GetPointIds()->SetId(1, NURBSEntityTriangleInd[k + numTriGrid] - 1 + transInd);
+					triangle->GetPointIds()->SetId(2, NURBSEntityTriangleInd[k + 2 * numTriGrid] - 1 + transInd);
+					triangles->InsertNextCell(triangle);
 				}
 				outData->SetPoints(points);
-				outData->SetVerts(vertices);
+				outData->SetStrips(triangles);
+
+				// 更新索引平移变量
+				transInd += numParamField[0] * numParamField[1];
 			}
 			break;
 		default:

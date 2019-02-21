@@ -157,6 +157,10 @@
     <ClInclude Include="targetver.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="EntityBSplineCurve.cpp" />
+    <ClCompile Include="EntityClipParamSurf.cpp" />
+    <ClCompile Include="EntityCompositeCurve.cpp" />
+    <ClCompile Include="EntityCurveOnParamSurf.cpp" />
     <ClCompile Include="EntityDrawing.cpp" />
     <ClCompile Include="EntityParam.cpp" />
     <ClCompile Include="EntityProperty.cpp" />

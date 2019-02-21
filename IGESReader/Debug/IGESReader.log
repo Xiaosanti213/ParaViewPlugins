@@ -1,26 +1,22 @@
 ﻿cl : 命令行 warning D9007: “/Gm”需要“/Zi 或 /ZI”；选项被忽略
-  EntityRationalBSplineSurf.cpp
-EntityRationalBSplineSurf.cpp(20): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-EntityRationalBSplineSurf.cpp(21): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-EntityRationalBSplineSurf.cpp(22): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-EntityRationalBSplineSurf.cpp(23): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-EntityRationalBSplineSurf.cpp(24): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-EntityRationalBSplineSurf.cpp(25): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-EntityRationalBSplineSurf.cpp(26): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
-EntityRationalBSplineSurf.cpp(91): warning C4018: “<”: 有符号/无符号不匹配
-  NURBSParam.cpp
-NURBSParam.cpp(36): warning C4018: “<”: 有符号/无符号不匹配
-NURBSParam.cpp(64): warning C4018: “<”: 有符号/无符号不匹配
-NURBSParam.cpp(65): warning C4018: “<”: 有符号/无符号不匹配
-NURBSParam.cpp(76): warning C4018: “<”: 有符号/无符号不匹配
-NURBSParam.cpp(104): warning C4018: “<”: 有符号/无符号不匹配
-NURBSParam.cpp(146): warning C4018: “<”: 有符号/无符号不匹配
-NURBSParam.cpp(181): warning C4018: “<”: 有符号/无符号不匹配
-NURBSParam.cpp(209): warning C4018: “<”: 有符号/无符号不匹配
-NURBSParam.cpp(241): warning C4018: “<”: 有符号/无符号不匹配
-NURBSParam.cpp(245): warning C4018: “<”: 有符号/无符号不匹配
-NURBSParam.cpp(246): warning C4018: “<”: 有符号/无符号不匹配
-NURBSParam.cpp(312): warning C4018: “<”: 有符号/无符号不匹配
-  正在生成代码...
+  IGESFileParser.cpp
+IGESFileParser.cpp(47): warning C4018: “<”: 有符号/无符号不匹配
+IGESFileParser.cpp(189): warning C4018: “<”: 有符号/无符号不匹配
+IGESFileParser.cpp(192): warning C4018: “<”: 有符号/无符号不匹配
+IGESFileParser.cpp(220): warning C4018: “<”: 有符号/无符号不匹配
+D:\VS2015\install\VC\include\utility(172): warning C4244: “初始化”: 从“int”转换到“float”，可能丢失数据
+  IGESFileParser.cpp(107): note: 参见对正在编译的函数 模板 实例化“std::pair<int,float>::pair<short&,int,void,0>(_Other1,_Other2 &&) noexcept”的引用
+          with
+          [
+              _Other1=short &,
+              _Other2=int
+          ]
+  IGESFileParser.cpp(107): note: 参见对正在编译的函数 模板 实例化“std::pair<int,float>::pair<short&,int,void,0>(_Other1,_Other2 &&) noexcept”的引用
+          with
+          [
+              _Other1=short &,
+              _Other2=int
+          ]
+c:\users\lenovo\desktop\doc\1224\igesreader\igesreader\igesfileparser.cpp(274): warning C4715: “IGESFileParser::getEachEntityClass”: 不是所有的控件路径都返回值
   IGESReader.vcxproj -> C:\Users\lenovo\Desktop\doc\1224\IGESReader\Debug\IGESReader.exe
   IGESReader.vcxproj -> C:\Users\lenovo\Desktop\doc\1224\IGESReader\Debug\IGESReader.pdb (Full PDB)
